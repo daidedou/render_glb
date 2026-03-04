@@ -43,8 +43,10 @@ Last thing, the script can be run everywhere, but the .blend has to be opened lo
 
 Then run 
 ```
-python modular.py --glb shape.glb --render --full (Quite slow, you can change res and numsamples in script to accelerate things)
+python modular.py --glb shape.glb --render --full 
 ```
+This is quite slow, you can change res and numsamples in script to accelerate things.
+
 - Add --eevee if you want fast rendering (eevee blender)
 - Add --gpu if you have an Nvidia GPU
 - Add --normals if you want normals shading 
