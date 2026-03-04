@@ -2,6 +2,8 @@ Done using fantastic [BlenderToolbox](https://github.com/HTDerekLiu/BlenderToolb
 
 ## Installation
 
+### Blender toolkit
+
 Install Blender 4.0.0, from here https://download.blender.org/release/Blender4.0/
 
 ```
@@ -12,6 +14,7 @@ pip install https://download.blender.org/pypi/bpy/bpy-4.0.0-cp310-cp310-manylinu
 pip install potpourri3d numpy matplotlib
 ```
 
+### Rembg (post processing)
 Install rembg. We first need to install onnxruntime-gpu.
 ```
 pip install onnxruntime-gpu==1.20.1 --extra-index-url https://aiinfra.pkgs.visualstudio.com/PublicPackages/_packaging/onnxruntime-cuda-X/pypi/simple/ --force-reinstall
@@ -31,6 +34,7 @@ pip install rembg
 
 ## Usage
 
+### Rendering 
 Run the script, with glb file in your folder like:
 python modular.py --glb sample.glb
  
@@ -53,3 +57,12 @@ This is quite slow, you can change res and numsamples in script to accelerate th
 You have option --nr from 0 to 3 to setup the prefered normals shading (logic in normals.py)
 - Add --sub X with X int > 0 if you want to subdivide mesh (pretty but can generate artefacts)
 Change --light to any path in studio light to change the lighting
+- Add --proc if you want the video of the animation at the end. Check that you have ffmpeg installed before
+
+### Postprocessing
+
+If you didn't use --proc, you can use 
+```
+python postproc.py --folder folder-name --fps fps
+```
+You have --eevee (when called, don't remove background shadows, eevee doesn't have them)
